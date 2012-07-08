@@ -8,7 +8,7 @@ gem 'rails', '3.2.6'
 gem 'mysql2'
 gem "private_pub", "~> 1.0.1"
 gem "thin", "~> 1.4.1"
-
+gem 'pg'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
