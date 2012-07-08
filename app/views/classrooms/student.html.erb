@@ -1,0 +1,12 @@
+STUDENT
+
+<div style="text-align:center; display: block;"> 
+  <br />
+  <div id="show_room">
+    <video id="asset" width="640" height="480">
+      <source type="video/ogg" src="<%= asset_path 'trailer_400p.ogg' %>">      
+    </video>
+  </div>  
+</div>
+
+<%= subscribe_to "/classroom/video" %>
