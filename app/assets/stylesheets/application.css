@@ -11,35 +11,3 @@
  *= require_self
  *= require_tree .
  */
-
-#show_room{
-  position: relative;
-}
-
-#show_room #asset{
-  width: 640px;
-  height: 480px;
-}
-
-#blackboard, #blackboard2, #background{
-  position: absolute;
-  border: 1px solid #CCC;
-  margin: auto;
-  left: 0;
-  right: 0;
-  top:0;
-  width: 640px;
-  height: 480px;
-}
-
-#sequence{
-  border: 1px solid #CCC;
-  margin: auto;
-  left: 0;
-  right: 0;
-  position:absolute;
-}
-
-#asset{
-  margin: 0 auto;
-}

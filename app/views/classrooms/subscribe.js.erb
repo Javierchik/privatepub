@@ -1,0 +1,5 @@
+<% publish_to "/classroom/students" do %>
+  $("#people").append("<li><i class= 'icon-user'></i> <%= @student_name %></li>");
+  $("#subscription_form").hide();
+  $("#chatroom").show();
+<% end %>

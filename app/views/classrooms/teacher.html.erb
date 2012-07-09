@@ -1,16 +1,27 @@
-Teacher
-
-<div style="text-align:center; display: block;">  
-  <button onclick="playPause()">Play/Pause</button>
+<div class="page-header">
+  <h1>Dashboard - Teacher</h1>
 </div>
 
-<div style="text-align:center; display: block;"> 
-  <br />
-  <div id="show_room">
-		<video id="asset" width="640" height="480" >
-		  <source type="video/ogg" src="<%= asset_path 'trailer_400p.ogg' %>">      
-		</video>
-  </div>  
+<div class="span8">
+	<video id="asset" width="540" height="380" >
+	  <source type="video/ogg" src="<%= asset_path 'trailer_400p.ogg' %>">      
+	</video>
+
+	<div style="text-align:center; display: block;">  
+	  <button onclick="playPause()" class = 'btn btn-primary'>Play/Pause</button>
+	</div>
+</div>
+
+<div class="span1" id="chatroom">
+  <h1>Chat</h1>
+
+	<ul id="chat" style="list-style: none;height: auto; width: 200px; border: 1px solid black;margin:0px;min-height: 300px;">
+	</ul>
+
+	<%= form_tag('message', remote: true, :id => "chat_form") do %>
+	  <%= text_field_tag :content %>
+	  <%= submit_tag "Send", :class => 'btn btn-primary' %>
+	<% end %>
 </div>
 
 <script>
@@ -32,3 +43,11 @@ Teacher
 </script>
 
 <%= subscribe_to "/classroom/video" %>
+<%= subscribe_to "/classroom/students" %>
+<%= subscribe_to "/classroom/messages" %>
+
+<script>
+  PrivatePub.subscribe("/classroom/messages", function(data, channel){
+    $("#chat").append("<li><span> " + data.time + "</span> " + data.message+ "</li>")
+  });
+</script>

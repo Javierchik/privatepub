@@ -19,6 +19,8 @@ Privatepub::Application.routes.draw do
         get 'teacher'
         get 'student'
         post 'playpause'
+        post 'subscribe', :format => :js
+        post 'message', :format => :js
       end
     end
 
@@ -45,7 +47,7 @@ Privatepub::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'classrooms#teacher'
+  root :to => 'classrooms#student'
 
   # See how all your routes lay out with "rake routes"
 
